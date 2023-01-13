@@ -1,25 +1,12 @@
 import React from "react";
+import { capitalizeFirstLetter } from "../../utils/helpers";
 
-function Nav() {
-  const categories = [
-    {
-      name: "Portfolio",
-      description:
-        "Displays titled images of the developer’s applications with links to both the deployed applications and the corresponding GitHub repository.",
-    },
-    {
-      name: "Resume",
-      description:
-        "Provides a link to a downloadable resume and a list of the developer’s proficiencies.",
-    },
-  ];
-  // event listener "onClick" run categorySelected function that...
-  function categorySelected(name) {
-    console.log(`${name} clicked!`);
-  }
+// passing props from App.js
+function Nav(props) {
+  const { categories = [], setCurrentCategory, currentCategory } = props;
   // returns the completed nav component to DOM
   return (
-    <header>
+    <header className="flex-row px-1">
       <h2>
         <a href="/">
           <span role="img" aria-label="camera">
@@ -37,11 +24,22 @@ function Nav() {
           <li>
             <span>Contact</span>
           </li>
-          {/* loads the categories listed in the navigation bar */}
+          {/* loads the categories listed in the navigation bar 
+          the useState hook here for the option to change the 
+          categories at some point in the future. */}
           {categories.map((category) => (
-            <li className="mx-1" key={category.name}>
-              <span onClick={() => categorySelected(category.name)}>
-                {category.name}
+            <li
+              className={`mx-1 ${
+                currentCategory.name === category.name && "navActive"
+              }`}
+              key={category.name}
+            >
+              <span
+                onClick={() => {
+                  setCurrentCategory(category);
+                }}
+              >
+                {capitalizeFirstLetter(category.name)}
               </span>
             </li>
           ))}
