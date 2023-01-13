@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
 // passing props from App.js
 function Nav(props) {
+  // deconstruct the props brought over from App.js
   const { categories = [], setCurrentCategory, currentCategory } = props;
+
+  useEffect(() => {
+    // first argument is the callback function
+    // second argument directs the hook to re-render the component
+    // on changes to the value of this state
+    document.title = capitalizeFirstLetter(currentCategory.name);
+  }, [currentCategory]);
+
   // returns the completed nav component to DOM
   return (
     <header className="flex-row px-1">
