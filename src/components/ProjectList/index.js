@@ -35,7 +35,6 @@ const ProjectList = ({ category }) => {
               className="img-thumbnail mx-1"
               key={image.name}
             />
-            <article>{}</article>
           </>
         ))}
       </div>
