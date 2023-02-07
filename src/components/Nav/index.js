@@ -10,7 +10,7 @@ function Nav(props) {
     // first argument is the callback function
     // second argument directs the hook to re-render the component
     // on changes to the value of this state
-    document.title = capitalizeFirstLetter(currentCategory.name);
+    document.title = "Steven's " + capitalizeFirstLetter(currentCategory.name);
   }, [currentCategory]);
 
   // returns the completed nav component to DOM
@@ -22,7 +22,7 @@ function Nav(props) {
             {" "}
             🔖
           </span>{" "}
-          Steve's Developer Portfolio
+          Steven's Developer Portfolio
         </a>
       </h2>
       <nav>

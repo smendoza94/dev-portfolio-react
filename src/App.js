@@ -1,18 +1,23 @@
 import "./App.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import About from "./components/About";
 import Nav from "./components/Nav";
-import Portfolio from "./components/Portfolio";
+import Gallery from "./components/Gallery";
 
 function App() {
   const [categories] = useState([
     {
-      name: "Portfolio",
+      name: "javascript",
       description:
-        "Displays titled images of the developer’s applications with links to both the deployed applications and the corresponding GitHub repository.",
+        "Displays titled images of the developer’s applications using Javascript with links to both the deployed applications and the corresponding GitHub repository.",
     },
     {
-      name: "Resume",
+      name: "roblox",
+      description:
+        "Showcase with links of games created by the developer through Roblox Studio, Lua scripting included in each game.",
+    },
+    {
+      name: "resume",
       description:
         "Provides a link to a downloadable resume and a list of the developer’s proficiencies.",
     },
@@ -28,7 +33,7 @@ function App() {
         currentCategory={currentCategory}
       ></Nav>
       <main>
-        <Portfolio></Portfolio>
+        <Gallery currentCategory={currentCategory}></Gallery>
         <About></About>
       </main>
     </div>
