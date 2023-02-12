@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from "../Modal";
 
 const ProjectList = ({ category }) => {
   const [projects] = useState([
@@ -24,8 +25,13 @@ const ProjectList = ({ category }) => {
     (project) => project.category === category
   );
 
+  const toggleModal = (image, i) => {
+    // current photo
+  };
+
   return (
     <div>
+      <Modal />
       <div className="flex-row">
         {currentProjects.map((image, i) => (
           <>
@@ -33,6 +39,7 @@ const ProjectList = ({ category }) => {
               src={require(`../../assets/${category}/${i}.jpg`)}
               alt={image.name}
               className="img-thumbnail mx-1"
+              onClick={() => toggleModal(image, i)}
               key={image.name}
             />
           </>
