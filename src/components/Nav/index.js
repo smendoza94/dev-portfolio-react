@@ -4,7 +4,13 @@ import { capitalizeFirstLetter } from "../../utils/helpers";
 // passing props from App.js
 function Nav(props) {
   // deconstruct the props brought over from App.js
-  const { categories = [], setCurrentCategory, currentCategory } = props;
+  const {
+    categories = [],
+    setCurrentCategory,
+    currentCategory,
+    contactSelected,
+    setContactSelected,
+  } = props;
 
   useEffect(() => {
     // first argument is the callback function
@@ -28,10 +34,12 @@ function Nav(props) {
       <nav>
         <ul className="flex-row">
           <li className="mx-2">
-            <a href="#about">About me</a>
+            <a href="#about" onClick={() => setContactSelected(false)}>
+              About me
+            </a>
           </li>
-          <li>
-            <span>Contact</span>
+          <li className={`mx-2 $ ${contactSelected && "navActive"}`}>
+            <span onClick={() => setContactSelected(true)}>Contact</span>
           </li>
           {/* loads the categories listed in the navigation bar 
           the useState hook here for the option to change the 
@@ -46,6 +54,7 @@ function Nav(props) {
               <span
                 onClick={() => {
                   setCurrentCategory(category);
+                  setContactSelected(false);
                 }}
               >
                 {capitalizeFirstLetter(category.name)}

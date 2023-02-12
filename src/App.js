@@ -6,6 +6,7 @@ import Gallery from "./components/Gallery";
 import ContactForm from "./components/Contact";
 
 function App() {
+  const [contactSelected, setContactSelected] = useState(false);
   const [categories] = useState([
     {
       name: "javascript",
@@ -29,14 +30,30 @@ function App() {
   return (
     <div>
       <Nav
+        // Passing the getter and setter functions into the Nav component
+        // will allow this component to modify the state in the App component,
+        // which will conditionally render based on the user's selection.
         categories={categories}
         setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}
+        contactSelected={contactSelected}
+        setContactSelected={setContactSelected}
       ></Nav>
       <main>
-        <ContactForm></ContactForm>
-        <Gallery currentCategory={currentCategory}></Gallery>
-        <About></About>
+        {/* The shorthand condition is called a ternary operator, 
+        identified with the ? and : symbols. The ternary operator is 
+        a popular pattern in React to enable conditional rendering, 
+        similar to how we used the && operator as a short circuit. 
+        With the ternary, though, we supply the false condition to 
+        render as well. */}
+        {!contactSelected ? (
+          <>
+            <Gallery currentCategory={currentCategory}></Gallery>
+            <About></About>
+          </>
+        ) : (
+          <ContactForm></ContactForm>
+        )}
       </main>
     </div>
   );
