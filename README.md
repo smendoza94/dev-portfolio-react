@@ -6,7 +6,7 @@ Being a web developer means being part of a community. Using the React Framework
 
 ### Deployment
 
-This site has been deployed to GitHub Pages, live and accessible here: [Steven Mendoza's Developer Portfolio](https://www.google.com)
+This site has been deployed to GitHub Pages, live and accessible here: [Steven Mendoza's Developer Portfolio](https://smendoza94.github.io/steven-portfolio)
 
 ### User Story
 
@@ -14,19 +14,19 @@ An employer, is looking for candidates with experience building single-page appl
 
 ### Criteria
 
-- [ ] The portfolio contains a header, a section for content, and a footer.
-- [ ] The header presents the developer's name and navigation with titles corresponding to different sections of the portfolio.
-- [ ] The navigation titles contain About Me, Portfolio, Contact, and Resume.
-- [ ] The title corresponding to the current section is highlighted in the navigation pane.
-- [ ] On clicking on a navigation title, the corresponding section will render below without the page reloading.
-- [ ] The About Me title and section are selected by default.
-- [ ] The About Me section shows a recent photo or avatar of the developer and a short bio about them.
-- [ ] The Portfolio section displays six (6) titled images of the developer’s applications with links to both the deployed applications and the corresponding GitHub repository.
-- [ ] The Contact section displays the contact form with fields for a name, an email address, and a message.
-- [ ] The Contact Form provides a notification when the key cursor moves out of a field that is required.
+- [x] The portfolio contains a header, a section for content, and a footer.
+- [x] The header presents the developer's name and navigation with titles corresponding to different sections of the portfolio.
+- [x] The navigation titles contain About Me, Portfolio, Contact, and Resume.
+- [x] The title corresponding to the current section is highlighted in the navigation pane.
+- [x] On clicking on a navigation title, the corresponding section will render below without the page reloading.
+- [x] The About Me title and section are selected by default.
+- [x] The About Me section shows a recent photo or avatar of the developer and a short bio about them.
+- [x] The Portfolio section displays six (6) titled images of the developer’s applications with links to both the deployed applications and the corresponding GitHub repository.
+- [x] The Contact section displays the contact form with fields for a name, an email address, and a message.
+- [x] The Contact Form provides a notification when the key cursor moves out of a field that is required.
 - [ ] The Contact Form notifies user when an invalid email address is entered.
-- [ ] The Resume section provides a link to a downloadable resume and a list of the developer’s proficiencies.
-- [ ] The footer presents text or icon links to the developer’s GitHub, LinkedIn profiles, and instagram?
+- [x] The Resume section provides a link to a downloadable resume and a list of the developer’s proficiencies.
+- [x] The footer presents text or icon links to the developer’s GitHub, LinkedIn profiles, and instagram?
 
 ### Technologies
 
