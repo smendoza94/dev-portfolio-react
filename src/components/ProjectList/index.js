@@ -21,17 +21,24 @@ const ProjectList = ({ category }) => {
     },
   ]);
 
+  const [currentPhoto, setCurrentPhoto] = useState();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const currentProjects = projects.filter(
     (project) => project.category === category
   );
 
   const toggleModal = (image, i) => {
     // current photo
+    setCurrentPhoto({ ...image, index: i });
+    setIsModalOpen(true);
   };
 
   return (
     <div>
-      <Modal />
+      {/* only render the modal if the isModalOpen value is true */}
+      {isModalOpen && <Modal currentPhoto={currentPhoto} />}
       <div className="flex-row">
         {currentProjects.map((image, i) => (
           <>
